@@ -1,0 +1,16 @@
+{
+  "name": "IDOS/TSK",
+  "short_name": "I/T",
+  "description": "Better way to get around!",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#4166f5", // Replace with your desired hex color
+  "theme_color": "#4166f5",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
