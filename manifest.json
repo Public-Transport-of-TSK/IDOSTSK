@@ -4,7 +4,7 @@
   "description": "Better way to get around!",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#4166f5", // Replace with your desired hex color
+  "background_color": "#4166f5",
   "theme_color": "#4166f5",
   "icons": [
     {
