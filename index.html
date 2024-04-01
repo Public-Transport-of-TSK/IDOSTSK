@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>IDOS/TSK</title>
+    <meta name="viewport" content="width=375, initial-scale=1.0">
     <style>
         body {
             background-color: #1e1e1e; /* dark background color */
@@ -70,6 +71,10 @@
             margin-top: 20px;
         }
 
+        .direction {
+            font-weight: bold;
+        }
+
         .line {
             background-color: #343a40;
             padding: 10px;
@@ -78,7 +83,6 @@
         }
 
         .line-name {
-            background-color: #007bff;
             padding: 5px 10px;
             border-radius: 5px; /* rounded corners */
             display: inline-block;
@@ -258,202 +262,384 @@
             {
                 name: 'Trenčín-Zlatovce',
                 stops: [
-    { name: 'Žilina', platform: '1', departures: [
-        { time: '6:44', days: ['Working Days'] },
-        { time: '8:44', days: ['Working Days'] },
-        { time: '10:44', days: ['Working Days'] },
-        { time: '12:44', days: ['Working Days'] },
-        { time: '14:44', days: ['Working Days'] },
-        { time: '16:44', days: ['Working Days'] },
-        { time: '18:44', days: ['Working Days'] },
-        { time: '20:44', days: ['Working Days'] }
-    ] },
-    { name: 'Horný Hričov', platform: '1', departures: [
-        { time: '6:56', days: ['Working Days'] },
-        { time: '8:56', days: ['Working Days'] },
-        { time: '10:56', days: ['Working Days'] },
-        { time: '12:56', days: ['Working Days'] },
-        { time: '14:56', days: ['Working Days'] },
-        { time: '16:56', days: ['Working Days'] },
-        { time: '18:56', days: ['Working Days'] },
-        { time: '20:56', days: ['Working Days'] }
-    ] },
-    { name: 'Dolný Hričov', platform: '1', departures: [
-        { time: '6:59', days: ['Working Days'] },
-        { time: '8:59', days: ['Working Days'] },
-        { time: '10:59', days: ['Working Days'] },
-        { time: '12:59', days: ['Working Days'] },
-        { time: '14:59', days: ['Working Days'] },
-        { time: '16:59', days: ['Working Days'] },
-        { time: '18:59', days: ['Working Days'] },
-        { time: '20:59', days: ['Working Days'] }
-    ] },
-    { name: 'Bytča', platform: '1', departures: [
-        { time: '7:06', days: ['Working Days'] },
-        { time: '9:06', days: ['Working Days'] },
-        { time: '11:06', days: ['Working Days'] },
-        { time: '13:06', days: ['Working Days'] },
-        { time: '15:06', days: ['Working Days'] },
-        { time: '17:06', days: ['Working Days'] },
-        { time: '19:06', days: ['Working Days'] },
-        { time: '21:06', days: ['Working Days'] }
-    ] },
-    { name: 'Predmier', platform: '1', departures: [
-        { time: '7:08', days: ['Working Days'] },
-        { time: '9:08', days: ['Working Days'] },
-        { time: '11:08', days: ['Working Days'] },
+    { 
+        name: 'Žilina', 
+        platform: '1', 
+        departures: [
+            { time: '04:44', days: ['Working Days'] },
+            { time: '05:44', days: ['Working Days'] },
+            { time: '06:44', days: ['Working Days'] },
+            { time: '07:44', days: ['Working Days'] },
+            { time: '08:44', days: ['Working Days'] },
+            { time: '10:44', days: ['Working Days'] },
+            { time: '12:44', days: ['Working Days'] },
+            { time: '13:44', days: ['Working Days'] },
+            { time: '14:44', days: ['Working Days'] },
+            { time: '15:44', days: ['Working Days'] },
+            { time: '16:44', days: ['Working Days'] },
+            { time: '17:44', days: ['Working Days'] },
+            { time: '18:44', days: ['Working Days'] },
+            { time: '20:44', days: ['Working Days'] }
+        ] 
+    },
+    { 
+        name: 'Horný Hričov', 
+        platform: '1', 
+        departures: [
+            { time: '04:56', days: ['Working Days'] },
+            { time: '05:56', days: ['Working Days'] },
+            { time: '06:56', days: ['Working Days'] },
+            { time: '07:56', days: ['Working Days'] },
+            { time: '08:56', days: ['Working Days'] },
+            { time: '10:56', days: ['Working Days'] },
+            { time: '12:56', days: ['Working Days'] },
+            { time: '13:56', days: ['Working Days'] },
+            { time: '14:56', days: ['Working Days'] },
+            { time: '15:56', days: ['Working Days'] },
+            { time: '16:56', days: ['Working Days'] },
+            { time: '17:56', days: ['Working Days'] },
+            { time: '18:56', days: ['Working Days'] },
+            { time: '20:56', days: ['Working Days'] }
+        ] 
+    },
+    { 
+        name: 'Dolný Hričov', 
+        platform: '1', 
+        departures: [
+            { time: '04:59', days: ['Working Days'] },
+            { time: '05:59', days: ['Working Days'] },
+            { time: '06:59', days: ['Working Days'] },
+            { time: '07:59', days: ['Working Days'] },
+            { time: '08:59', days: ['Working Days'] },
+            { time: '10:59', days: ['Working Days'] },
+            { time: '12:59', days: ['Working Days'] },
+            { time: '13:59', days: ['Working Days'] },
+            { time: '14:59', days: ['Working Days'] },
+            { time: '15:59', days: ['Working Days'] },
+            { time: '16:59', days: ['Working Days'] },
+            { time: '17:59', days: ['Working Days'] },
+            { time: '18:59', days: ['Working Days'] },
+            { time: '20:59', days: ['Working Days'] }
+        ] 
+    },
+    { 
+        name: 'Bytča', 
+        platform: '1', 
+        departures: [
+            { time: '05:06', days: ['Working Days'] },
+            { time: '06:06', days: ['Working Days'] },
+            { time: '07:06', days: ['Working Days'] },
+            { time: '08:06', days: ['Working Days'] },
+            { time: '10:06', days: ['Working Days'] },
+            { time: '12:06', days: ['Working Days'] },
+            { time: '13:06', days: ['Working Days'] },
+            { time: '14:06', days: ['Working Days'] },
+            { time: '15:06', days: ['Working Days'] },
+            { time: '16:06', days: ['Working Days'] },
+            { time: '17:06', days: ['Working Days'] },
+            { time: '18:06', days: ['Working Days'] },
+            { time: '20:06', days: ['Working Days'] }
+        ] 
+    },
+    { 
+    name: 'Predmier', 
+    platform: '1', 
+    departures: [
+        { time: '05:08', days: ['Working Days'] },
+        { time: '06:08', days: ['Working Days'] },
+        { time: '07:08', days: ['Working Days'] },
+        { time: '08:08', days: ['Working Days'] },
+        { time: '10:08', days: ['Working Days'] },
+        { time: '12:08', days: ['Working Days'] },
         { time: '13:08', days: ['Working Days'] },
+        { time: '14:08', days: ['Working Days'] },
         { time: '15:08', days: ['Working Days'] },
+        { time: '16:08', days: ['Working Days'] },
         { time: '17:08', days: ['Working Days'] },
-        { time: '19:08', days: ['Working Days'] },
-        { time: '21:08', days: ['Working Days'] }
-    ] },
-    { name: 'Plevník-Drienové', platform: '1', departures: [
-        { time: '7:12', days: ['Working Days'] },
-        { time: '9:12', days: ['Working Days'] },
-        { time: '11:12', days: ['Working Days'] },
+        { time: '18:08', days: ['Working Days'] },
+        { time: '20:08', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Plevník-Drienové', 
+    platform: '1', 
+    departures: [
+        { time: '05:12', days: ['Working Days'] },
+        { time: '06:12', days: ['Working Days'] },
+        { time: '07:12', days: ['Working Days'] },
+        { time: '08:12', days: ['Working Days'] },
+        { time: '10:12', days: ['Working Days'] },
+        { time: '12:12', days: ['Working Days'] },
         { time: '13:12', days: ['Working Days'] },
+        { time: '14:12', days: ['Working Days'] },
         { time: '15:12', days: ['Working Days'] },
+        { time: '16:12', days: ['Working Days'] },
         { time: '17:12', days: ['Working Days'] },
-        { time: '19:12', days: ['Working Days'] },
-        { time: '21:12', days: ['Working Days'] }
-    ] },
-    { name: 'Považská Teplá', platform: '1', departures: [
-        { time: '7:16', days: ['Working Days'] },
-        { time: '9:16', days: ['Working Days'] },
-        { time: '11:16', days: ['Working Days'] },
+        { time: '18:12', days: ['Working Days'] },
+        { time: '20:12', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Považská Teplá', 
+    platform: '1', 
+    departures: [
+        { time: '05:16', days: ['Working Days'] },
+        { time: '06:16', days: ['Working Days'] },
+        { time: '07:16', days: ['Working Days'] },
+        { time: '08:16', days: ['Working Days'] },
+        { time: '10:16', days: ['Working Days'] },
+        { time: '12:16', days: ['Working Days'] },
         { time: '13:16', days: ['Working Days'] },
+        { time: '14:16', days: ['Working Days'] },
         { time: '15:16', days: ['Working Days'] },
+        { time: '16:16', days: ['Working Days'] },
         { time: '17:16', days: ['Working Days'] },
-        { time: '19:16', days: ['Working Days'] },
-        { time: '21:16', days: ['Working Days'] }
-    ] },
-    { name: 'Považská Bystrica', platform: '1', departures: [
-        { time: '7:20', days: ['Working Days'] },
-        { time: '9:20', days: ['Working Days'] },
-        { time: '11:20', days: ['Working Days'] },
+        { time: '18:16', days: ['Working Days'] },
+        { time: '20:16', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Považská Bystrica', 
+    platform: '1', 
+    departures: [
+        { time: '05:20', days: ['Working Days'] },
+        { time: '06:20', days: ['Working Days'] },
+        { time: '07:20', days: ['Working Days'] },
+        { time: '08:20', days: ['Working Days'] },
+        { time: '10:20', days: ['Working Days'] },
+        { time: '12:20', days: ['Working Days'] },
         { time: '13:20', days: ['Working Days'] },
+        { time: '14:20', days: ['Working Days'] },
         { time: '15:20', days: ['Working Days'] },
+        { time: '16:20', days: ['Working Days'] },
         { time: '17:20', days: ['Working Days'] },
-        { time: '19:20', days: ['Working Days'] },
-        { time: '21:20', days: ['Working Days'] }
-    ] },
-    { name: 'Nosice', platform: '1', departures: [
-        { time: '7:26', days: ['Working Days'] },
-        { time: '9:26', days: ['Working Days'] },
-        { time: '11:26', days: ['Working Days'] },
+        { time: '18:20', days: ['Working Days'] },
+        { time: '20:20', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Nosice', 
+    platform: '1', 
+    departures: [
+        { time: '05:26', days: ['Working Days'] },
+        { time: '06:26', days: ['Working Days'] },
+        { time: '07:26', days: ['Working Days'] },
+        { time: '08:26', days: ['Working Days'] },
+        { time: '10:26', days: ['Working Days'] },
+        { time: '12:26', days: ['Working Days'] },
         { time: '13:26', days: ['Working Days'] },
+        { time: '14:26', days: ['Working Days'] },
         { time: '15:26', days: ['Working Days'] },
+        { time: '16:26', days: ['Working Days'] },
         { time: '17:26', days: ['Working Days'] },
-        { time: '19:26', days: ['Working Days'] },
-        { time: '21:26', days: ['Working Days'] }
-    ] },
-    { name: 'Púchov', platform: '1', departures: [
-        { time: '7:31', days: ['Working Days'] },
-        { time: '9:31', days: ['Working Days'] },
-        { time: '11:31', days: ['Working Days'] },
+        { time: '18:26', days: ['Working Days'] },
+        { time: '20:26', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Púchov', 
+    platform: '1', 
+    departures: [
+        { time: '05:31', days: ['Working Days'] },
+        { time: '06:31', days: ['Working Days'] },
+        { time: '07:31', days: ['Working Days'] },
+        { time: '08:31', days: ['Working Days'] },
+        { time: '10:31', days: ['Working Days'] },
+        { time: '12:31', days: ['Working Days'] },
         { time: '13:31', days: ['Working Days'] },
+        { time: '14:31', days: ['Working Days'] },
         { time: '15:31', days: ['Working Days'] },
+        { time: '16:31', days: ['Working Days'] },
         { time: '17:31', days: ['Working Days'] },
-        { time: '19:31', days: ['Working Days'] },
-        { time: '21:31', days: ['Working Days'] }
-    ] },
-    { name: 'Dolné Kočkovce', platform: '1', departures: [
-        { time: '7:34', days: ['Working Days'] },
-        { time: '9:34', days: ['Working Days'] },
-        { time: '11:34', days: ['Working Days'] },
+        { time: '18:31', days: ['Working Days'] },
+        { time: '20:31', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Dolné Kočkovce', 
+    platform: '1', 
+    departures: [
+        { time: '05:34', days: ['Working Days'] },
+        { time: '06:34', days: ['Working Days'] },
+        { time: '07:34', days: ['Working Days'] },
+        { time: '08:34', days: ['Working Days'] },
+        { time: '10:34', days: ['Working Days'] },
+        { time: '12:34', days: ['Working Days'] },
         { time: '13:34', days: ['Working Days'] },
+        { time: '14:34', days: ['Working Days'] },
         { time: '15:34', days: ['Working Days'] },
+        { time: '16:34', days: ['Working Days'] },
         { time: '17:34', days: ['Working Days'] },
-        { time: '19:34', days: ['Working Days'] },
-        { time: '21:34', days: ['Working Days'] }
-    ] },
-    { name: 'Beluša', platform: '1', departures: [
-        { time: '7:37', days: ['Working Days'] },
-        { time: '9:37', days: ['Working Days'] },
-        { time: '11:37', days: ['Working Days'] },
+        { time: '18:34', days: ['Working Days'] },
+        { time: '20:34', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Beluša', 
+    platform: '1', 
+    departures: [
+        { time: '05:37', days: ['Working Days'] },
+        { time: '06:37', days: ['Working Days'] },
+        { time: '07:37', days: ['Working Days'] },
+        { time: '08:37', days: ['Working Days'] },
+        { time: '10:37', days: ['Working Days'] },
+        { time: '12:37', days: ['Working Days'] },
         { time: '13:37', days: ['Working Days'] },
+        { time: '14:37', days: ['Working Days'] },
         { time: '15:37', days: ['Working Days'] },
+        { time: '16:37', days: ['Working Days'] },
         { time: '17:37', days: ['Working Days'] },
-        { time: '19:37', days: ['Working Days'] },
-        { time: '21:37', days: ['Working Days'] }
-    ] },
-    { name: 'Ladce', platform: '1', departures: [
-        { time: '7:41', days: ['Working Days'] },
-        { time: '9:41', days: ['Working Days'] },
-        { time: '11:41', days: ['Working Days'] },
+        { time: '18:37', days: ['Working Days'] },
+        { time: '20:37', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Ladce', 
+    platform: '1', 
+    departures: [
+        { time: '05:41', days: ['Working Days'] },
+        { time: '06:41', days: ['Working Days'] },
+        { time: '07:41', days: ['Working Days'] },
+        { time: '08:41', days: ['Working Days'] },
+        { time: '10:41', days: ['Working Days'] },
+        { time: '12:41', days: ['Working Days'] },
         { time: '13:41', days: ['Working Days'] },
+        { time: '14:41', days: ['Working Days'] },
         { time: '15:41', days: ['Working Days'] },
+        { time: '16:41', days: ['Working Days'] },
         { time: '17:41', days: ['Working Days'] },
-        { time: '19:41', days: ['Working Days'] },
-        { time: '21:41', days: ['Working Days'] }
-    ] },
-    { name: 'Košeca', platform: '1', departures: [
-        { time: '7:45', days: ['Working Days'] },
-        { time: '9:45', days: ['Working Days'] },
-        { time: '11:45', days: ['Working Days'] },
+        { time: '18:41', days: ['Working Days'] },
+        { time: '20:41', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Košeca', 
+    platform: '1', 
+    departures: [
+        { time: '05:45', days: ['Working Days'] },
+        { time: '06:45', days: ['Working Days'] },
+        { time: '07:45', days: ['Working Days'] },
+        { time: '08:45', days: ['Working Days'] },
+        { time: '10:45', days: ['Working Days'] },
+        { time: '12:45', days: ['Working Days'] },
         { time: '13:45', days: ['Working Days'] },
+        { time: '14:45', days: ['Working Days'] },
         { time: '15:45', days: ['Working Days'] },
+        { time: '16:45', days: ['Working Days'] },
         { time: '17:45', days: ['Working Days'] },
-        { time: '19:45', days: ['Working Days'] },
-        { time: '21:45', days: ['Working Days'] }
-    ] },
-    { name: 'Ilava', platform: '1', departures: [
-        { time: '7:48', days: ['Working Days'] },
-        { time: '9:48', days: ['Working Days'] },
-        { time: '11:48', days: ['Working Days'] },
+        { time: '18:45', days: ['Working Days'] },
+        { time: '20:45', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Ilava', 
+    platform: '1', 
+    departures: [
+        { time: '05:48', days: ['Working Days'] },
+        { time: '06:48', days: ['Working Days'] },
+        { time: '07:48', days: ['Working Days'] },
+        { time: '08:48', days: ['Working Days'] },
+        { time: '10:48', days: ['Working Days'] },
+        { time: '12:48', days: ['Working Days'] },
         { time: '13:48', days: ['Working Days'] },
+        { time: '14:48', days: ['Working Days'] },
         { time: '15:48', days: ['Working Days'] },
+        { time: '16:48', days: ['Working Days'] },
         { time: '17:48', days: ['Working Days'] },
-        { time: '19:48', days: ['Working Days'] },
-        { time: '21:48', days: ['Working Days'] }
-    ] },
-    { name: 'Dubnica nad Váhom', platform: '1', departures: [
-        { time: '7:54', days: ['Working Days'] },
-        { time: '9:54', days: ['Working Days'] },
-        { time: '11:54', days: ['Working Days'] },
+        { time: '18:48', days: ['Working Days'] },
+        { time: '20:48', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Dubnica nad Váhom', 
+    platform: '1', 
+    departures: [
+        { time: '05:54', days: ['Working Days'] },
+        { time: '06:54', days: ['Working Days'] },
+        { time: '07:54', days: ['Working Days'] },
+        { time: '08:54', days: ['Working Days'] },
+        { time: '10:54', days: ['Working Days'] },
+        { time: '12:54', days: ['Working Days'] },
         { time: '13:54', days: ['Working Days'] },
+        { time: '14:54', days: ['Working Days'] },
         { time: '15:54', days: ['Working Days'] },
+        { time: '16:54', days: ['Working Days'] },
         { time: '17:54', days: ['Working Days'] },
-        { time: '19:54', days: ['Working Days'] },
-        { time: '21:54', days: ['Working Days'] }
-    ] },
-    { name: 'Trenčianska Teplá', platform: '2', departures: [
-        { time: '8:00', days: ['Working Days'] },
+        { time: '18:54', days: ['Working Days'] },
+        { time: '20:54', days: ['Working Days'] }
+    ] 
+},
+{ 
+    name: 'Trenčianska Teplá', 
+    platform: '1', 
+    departures: [
+        { time: '06:00', days: ['Working Days'] },
+        { time: '07:00', days: ['Working Days'] },
+        { time: '08:00', days: ['Working Days'] },
         { time: '10:00', days: ['Working Days'] },
         { time: '12:00', days: ['Working Days'] },
+        { time: '13:00', days: ['Working Days'] },
         { time: '14:00', days: ['Working Days'] },
+        { time: '15:00', days: ['Working Days'] },
         { time: '16:00', days: ['Working Days'] },
+        { time: '17:00', days: ['Working Days'] },
         { time: '18:00', days: ['Working Days'] },
         { time: '20:00', days: ['Working Days'] },
         { time: '22:00', days: ['Working Days'] }
-    ] },
-    { name: 'Trenčín-Opatová', platform: '2', departures: [
-        { time: '8:03', days: ['Working Days'] },
+    ] 
+},
+{ 
+    name: 'Trenčín-Opatová', 
+    platform: '1', 
+    departures: [
+        { time: '06:03', days: ['Working Days'] },
+        { time: '07:03', days: ['Working Days'] },
+        { time: '08:03', days: ['Working Days'] },
         { time: '10:03', days: ['Working Days'] },
         { time: '12:03', days: ['Working Days'] },
+        { time: '13:03', days: ['Working Days'] },
         { time: '14:03', days: ['Working Days'] },
+        { time: '15:03', days: ['Working Days'] },
         { time: '16:03', days: ['Working Days'] },
+        { time: '17:03', days: ['Working Days'] },
         { time: '18:03', days: ['Working Days'] },
         { time: '20:03', days: ['Working Days'] },
         { time: '22:03', days: ['Working Days'] }
-    ] },
-    { name: 'Trenčín', platform: '2', departures: [
-        { time: '8:09', days: ['Working Days'] },
+    ] 
+},
+{ 
+    name: 'Trenčín', 
+    platform: '1', 
+    departures: [
+        { time: '06:09', days: ['Working Days'] },
+        { time: '07:09', days: ['Working Days'] },
+        { time: '08:09', days: ['Working Days'] },
         { time: '10:09', days: ['Working Days'] },
         { time: '12:09', days: ['Working Days'] },
+        { time: '13:09', days: ['Working Days'] },
         { time: '14:09', days: ['Working Days'] },
+        { time: '15:09', days: ['Working Days'] },
         { time: '16:09', days: ['Working Days'] },
+        { time: '17:09', days: ['Working Days'] },
         { time: '18:09', days: ['Working Days'] },
         { time: '20:09', days: ['Working Days'] },
         { time: '22:09', days: ['Working Days'] }
-    ] },
-    { name: 'Trenčín-Zlatovce', platform: '2', departures: [
-        { time: '8:11', days: ['Working Days'] },
+    ] 
+},
+{ 
+    name: 'Trenčín-Zlatovce', 
+    platform: '1', 
+    departures: [
+        { time: '06:11', days: ['Working Days'] },
+        { time: '07:11', days: ['Working Days'] },
+        { time: '08:11', days: ['Working Days'] },
         { time: '10:11', days: ['Working Days'] },
         { time: '12:11', days: ['Working Days'] },
+        { time: '13:11', days: ['Working Days'] },
         { time: '14:11', days: ['Working Days'] },
+        { time: '15:11', days: ['Working Days'] },
         { time: '16:11', days: ['Working Days'] },
+        { time: '17:11', days: ['Working Days'] },
         { time: '18:11', days: ['Working Days'] },
         { time: '20:11', days: ['Working Days'] },
         { time: '22:11', days: ['Working Days'] }
@@ -496,29 +682,38 @@
     var resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
-    results.forEach(function(result) {
-        var lineDiv = document.createElement('div');
-        lineDiv.className = 'line';
-        var lineNameDiv = document.createElement('div');
-        lineNameDiv.className = 'line-name';
-        lineNameDiv.textContent = result.line;
-        lineDiv.appendChild(lineNameDiv);
-        var directionDiv = document.createElement('div');
-        directionDiv.className = 'direction';
-        directionDiv.textContent = result.direction;
-        lineDiv.appendChild(directionDiv);
-        result.stops.forEach(function(stop) {
-            var stopDiv = document.createElement('div');
-            stopDiv.textContent = stop.name + ' ';
-            var platformSpan = document.createElement('span');
-            platformSpan.className = 'platform';
-            platformSpan.textContent = stop.platform;
-            stopDiv.appendChild(platformSpan);
-            stopDiv.innerHTML += ' - ' + stop.departures[0].time;
-            lineDiv.appendChild(stopDiv);
-        });
-        resultsDiv.appendChild(lineDiv);
+results.forEach(function(result) {
+    var lineDiv = document.createElement('div');
+    lineDiv.className = 'line';
+
+    var lineNameDiv = document.createElement('div');
+    lineNameDiv.className = 'line-name';
+    lineNameDiv.textContent = result.line;
+    // Set background color for .line-name based on the line's color property
+    lines.forEach(function(line) {
+        if (line.name === result.line) {
+            lineNameDiv.style.backgroundColor = line.color;
+        }
     });
+
+    lineDiv.appendChild(lineNameDiv);
+    var directionDiv = document.createElement('div');
+    directionDiv.className = 'direction';
+    directionDiv.textContent = result.direction.name;
+    lineDiv.appendChild(directionDiv);
+    result.stops.forEach(function(stop) {
+        var stopDiv = document.createElement('div');
+        stopDiv.textContent = stop.name + ' ';
+        var platformSpan = document.createElement('span');
+        platformSpan.className = 'platform';
+        platformSpan.textContent = stop.platform;
+        stopDiv.appendChild(platformSpan);
+        stopDiv.innerHTML += ' - ' + stop.departures[0].time;
+        lineDiv.appendChild(stopDiv);
+    });
+    resultsDiv.appendChild(lineDiv);
+});
+
 }
 
         function suggestStops(inputId) {
@@ -560,7 +755,7 @@
     <img src="logo.svg" alt="Logo" class="logo">
 </div>
     <div class="container">
-        <h1>BUS Trenčín + metroDC</h1>
+        <h1>TransDev Trenčín + metroDC</h1>
         <label for="startLocation">Start Location:</label><br>
         <input type="text" id="startLocation" name="startLocation" list="startLocationList" oninput="suggestStops('startLocation')"><br>
         <datalist id="startLocationList"></datalist>
