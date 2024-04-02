@@ -659,6 +659,8 @@
         function searchConnections() {
     var startLocation = normalize(document.getElementById('startLocation').value);
     var endLocation = normalize(document.getElementById('endLocation').value);
+    var searchDate = new Date(document.getElementById('date').value);
+    var searchTime = document.getElementById('time').value;
     var results = [];
 
     lines.forEach(function(line) {
@@ -667,11 +669,23 @@
                 if (normalize(stop.name) === startLocation) {
                     for (var j = i + 1; j < direction.stops.length; j++) {
                         if (normalize(direction.stops[j].name) === endLocation) {
-                            results.push({
+                            var connection = {
                                 line: line.name,
                                 direction: direction.name,
                                 stops: direction.stops.slice(i, j + 1)
+                            };
+                            // Filter departures based on search date, time, and weekday/weekend
+                            connection.stops.forEach(function(stop) {
+                                stop.departures = stop.departures.filter(function(departure) {
+                                    var departureDate = new Date(searchDate.toDateString() + ' ' + departure.time);
+                                    // Check if departure is on or after the search time and on a weekday or weekend
+                                    return departureDate >= searchDate && departureDate >= new Date(searchDate.toDateString() + ' ' + searchTime) && 
+                                        ((departure.days.includes('Working Days') && searchDate.getDay() >= 1 && searchDate.getDay() <= 5) || 
+                                        (departure.days.includes('Saturday') && searchDate.getDay() === 6) ||
+                                        (departure.days.includes('Sunday') && searchDate.getDay() === 0));
+                                });
                             });
+                            results.push(connection);
                             break; // Exit the loop once end location is found
                         }
                     }
@@ -683,38 +697,37 @@
     var resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
 
-results.forEach(function(result) {
-    var lineDiv = document.createElement('div');
-    lineDiv.className = 'line';
+    results.forEach(function(result) {
+        var lineDiv = document.createElement('div');
+        lineDiv.className = 'line';
 
-    var lineNameDiv = document.createElement('div');
-    lineNameDiv.className = 'line-name';
-    lineNameDiv.textContent = result.line;
-    // Set background color for .line-name based on the line's color property
-    lines.forEach(function(line) {
-        if (line.name === result.line) {
-            lineNameDiv.style.backgroundColor = line.color;
-        }
+        var lineNameDiv = document.createElement('div');
+        lineNameDiv.className = 'line-name';
+        lineNameDiv.textContent = result.line;
+        // Set background color for .line-name based on the line's color property
+        lines.forEach(function(line) {
+            if (line.name === result.line) {
+                lineNameDiv.style.backgroundColor = line.color;
+            }
+        });
+
+        lineDiv.appendChild(lineNameDiv);
+        var directionDiv = document.createElement('div');
+        directionDiv.className = 'direction';
+        directionDiv.textContent = result.direction.name;
+        lineDiv.appendChild(directionDiv);
+        result.stops.forEach(function(stop) {
+            var stopDiv = document.createElement('div');
+            stopDiv.textContent = stop.name + ' ';
+            var platformSpan = document.createElement('span');
+            platformSpan.className = 'platform';
+            platformSpan.textContent = stop.platform;
+            stopDiv.appendChild(platformSpan);
+            stopDiv.innerHTML += ' - ' + stop.departures[0].time;
+            lineDiv.appendChild(stopDiv);
+        });
+        resultsDiv.appendChild(lineDiv);
     });
-
-    lineDiv.appendChild(lineNameDiv);
-    var directionDiv = document.createElement('div');
-    directionDiv.className = 'direction';
-    directionDiv.textContent = result.direction.name;
-    lineDiv.appendChild(directionDiv);
-    result.stops.forEach(function(stop) {
-        var stopDiv = document.createElement('div');
-        stopDiv.textContent = stop.name + ' ';
-        var platformSpan = document.createElement('span');
-        platformSpan.className = 'platform';
-        platformSpan.textContent = stop.platform;
-        stopDiv.appendChild(platformSpan);
-        stopDiv.innerHTML += ' - ' + stop.departures[0].time;
-        lineDiv.appendChild(stopDiv);
-    });
-    resultsDiv.appendChild(lineDiv);
-});
-
 }
 
         function suggestStops(inputId) {
